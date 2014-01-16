@@ -28,3 +28,12 @@ $margin: 2.08333%;
 @mixin position($n) {
   margin-left: -100% + $n * (100% + $margin) / $cols;
 }
+
+// create classes
+.row {@include row}
+.cell {@include cell}
+
+@for $n from 1 through $cols {
+  .width-#{$n} {@include width($n)}
+  .position-#{$n - 1} {@include position($n - 1)}
+}
