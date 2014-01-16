@@ -16,5 +16,9 @@ between columns (the original decogrid provides 2.08333% and 0%).
 Just set the appropriate values for `$cols` and `$margin` and SASS will do all
 the math. In addition you get mixins to use in your existing classes.
 
+decogrid.scss is designed as a drop-in replacement for decogrid.  However you
+can set a `$prefix` for the generated CSS classes (e.g. `'deco-'`) to avoid
+naming collisions.
+
 [1]: http://www.alistapart.com/articles/fauxabsolutepositioning/
 [2]: http://sass-lang.com

@@ -3,6 +3,7 @@
  */
 
 // Modify these to your needs.
+$prefix: '';  // e.g. 'deco-'
 $cols: 12;
 $margin: 2.08333%;
 
@@ -31,10 +32,10 @@ $margin: 2.08333%;
 }
 
 // create classes
-.row {@include row}
-.cell {@include cell}
+.#{$prefix}row {@include row}
+.#{$prefix}cell {@include cell}
 
 @for $n from 1 through $cols {
-  .width-#{$n} {@include width($n)}
-  .position-#{$n - 1} {@include position($n - 1)}
+  .#{$prefix}width-#{$n} {@include width($n)}
+  .#{$prefix}position-#{$n - 1} {@include position($n - 1)}
 }
