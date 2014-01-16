@@ -2,7 +2,7 @@
  * For the original, see <http://limi.net/deco.gs>
  */
 
-/* Modify these to your needs. */
+// Modify these to your needs.
 $cols: 12;
 $margin: 2.08333%;
 
@@ -18,13 +18,13 @@ $margin: 2.08333%;
   left: 100%;
 }
 
-/* Width mixin. */
+// Width mixin.
 @mixin width($n) {
   width: $n * (100% + $margin) / $cols - $margin;
 }
 
-/* Positioning mixin, this is subtracting from a rightmost
-   position, which is why it seem the wrong way around */
+// Positioning mixin, this is subtracting from a rightmost
+// position, which is why it seem the wrong way around
 @mixin position($n) {
   margin-left: -100% + $n * (100% + $margin) / $cols;
 }
