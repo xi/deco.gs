@@ -1,0 +1,42 @@
+/* LESS implementation of the Deco Grid System
+ * For the original, see <http://limi.net/deco.gs>
+ */
+
+// Modify these to your needs.
+@prefix: escape('');  // e.g. 'deco-'
+@cols: 12;
+@margin: 2.08333%;
+
+.@{prefix}row {
+  float: left;
+  width: 100%;
+  display: block;
+  position: relative;
+  clear: both;
+}
+.@{prefix}cell {
+  position: relative;
+  float: left;
+  left: 100%;
+}
+
+// Width mixin.
+.width(@n) {
+  width: @n * (100% + @margin) / @cols - @margin;
+}
+
+// Positioning mixin, this is subtracting from a rightmost
+// position, which is why it seem the wrong way around
+.position(@n) {
+  margin-left: -100% + @n * (100% + @margin) / @cols;
+}
+
+// create classes
+.loop(@n) when (@n > 0) {
+  .loop(@n - 1);
+
+  .@{prefix}width-@{n} {.width(@n)}
+  @nn: @n - 1;
+  .@{prefix}position-@{nn} {.position(@nn)}
+}
+.loop(@cols);
