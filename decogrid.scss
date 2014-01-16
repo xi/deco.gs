@@ -11,6 +11,7 @@ $margin: 2.08333%;
   width: 100%;
   display: block;
   position: relative;
+  clear: both;
 }
 @mixin cell {
   position: relative;
